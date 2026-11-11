@@ -1,0 +1,48 @@
+MUNNIZZA™ — versione 1.2
+Il gioco 3D del Capone sulla raccolta differenziata, tra i templi e i mandorli di Agrigento.
+
+COME PUBBLICARLO (come gli altri giochi)
+1. Crea un nuovo repository su GitHub (es. "munnizza") e carica TUTTO il contenuto di questa cartella nella radice.
+2. Su Vercel: Add New → Project → scegli il repository → Deploy.
+3. Il gioco è tutto dentro index.html (grafica 3D, font, suoni). Funziona in verticale e in orizzontale.
+
+CLASSIFICA MENSILE (top 10)
+- Usa lo stesso database Firebase del Super Capone, percorso:  arcade/munnizza/top
+- Nelle REGOLE del Realtime Database, dentro "arcade", accanto al blocco "girgentiroads", aggiungi:
+
+    "munnizza": {
+      "top": {
+        ".read": true,
+        ".write": true,
+        "$i": { ".validate": "newData.child('n').isString() && newData.child('n').val().length <= 14 && newData.child('s').isNumber() && newData.child('s').val() >= 0 && newData.child('s').val() <= 3000000" }
+      }
+    },
+
+  (attenzione alla virgola tra un blocco e l'altro). Poi premi Pubblica.
+- Finché la regola non c'è, il gioco funziona lo stesso e mostra i record del telefono.
+- Il 1° di ogni mese la classifica riparte da zero da sola.
+
+COME SI GIOCA
+- I rifiuti scendono dall'alto: prendili col dito, portali sopra il cassonetto giusto e lasciali cadere.
+- Un rifiuto che cade da solo finisce nel cassonetto che ha sotto: se è quello sbagliato perdi una vita.
+- 3 vite. Si guadagna 1 vita in due modi, cumulabili: ogni 100 rifiuti giusti in totale (anche con errori in mezzo) oppure ogni 50 rifiuti giusti DI FILA senza sbagliare (se sbagli, il conteggio dei 50 riparte da zero). Fino a 5 cuori; oltre, bonus punti.
+- Risposte giuste di fila = più punti. A fine livello c'è un bonus.
+- Modalità: FACILE (punti ×1), MEDIA (×1,5), DIFFICILE (×2): cambiano velocità e quantità di rifiuti.
+
+LIVELLI
+- 1: molto semplice, un rifiuto alla volta, con il cassonetto giusto che saltella per i primi tre.
+- 2: crescendo, più rifiuti insieme e sempre più veloci.
+- 3: arriva il cassonetto ALLUMINIO · 5: arriva il VETRO · 10: arriva il SECCO (indifferenziata).
+- Ogni due livelli cambia la luce: giorno, pomeriggio, tramonto, notte con il tempio illuminato.
+
+AUDIO
+- Musica di sottofondo "Immondizia" (audio/immondizia.mp3), in loop; si abbassa quando parla una voce.
+- Errore: si sente una delle tre voci d'errore, a rotazione (errore1/2/3).
+- Livello 3 (cassonetto alluminio) e livello 10 (cassonetto secco): voce dedicata all'inizio del livello.
+- Durante il gioco, ogni tanto, un commento a caso tra 7 (commento1-7), mai sovrapposti; l'errore ha sempre la precedenza.
+- Il tasto altoparlante toglie musica e voci insieme (la scelta resta salvata). In pausa tutto si ferma.
+- Le tracce sono compresse (voci mono 64 kbps, musica 96 kbps) e senza il silenzio iniziale; la fine non è stata tagliata.
+- Il cassonetto del vetro (livello 5) non ha una voce dedicata.
+
+FILE
+index.html · audio/ (13 tracce) · · sw.js · manifest.webmanifest · vercel.json · robots.txt · icone · og-image.jpg · font Bungee (licenza OFL).

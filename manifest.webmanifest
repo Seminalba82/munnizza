@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Munnizza – il Capone e la differenziata",
+  "short_name": "Munnizza",
+  "description": "Trascina ogni rifiuto nel cassonetto giusto, tra i templi e i mandorli di Agrigento, e scala la top 10 del mese!",
+  "lang": "it",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#120a24",
+  "theme_color": "#120a24",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
