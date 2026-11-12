@@ -1,4 +1,4 @@
-MUNNIZZA™ — versione 1.2
+MUNNIZZA™ — versione 1.3
 Il gioco 3D del Capone sulla raccolta differenziata, tra i templi e i mandorli di Agrigento.
 
 COME PUBBLICARLO (come gli altri giochi)
@@ -46,3 +46,9 @@ AUDIO
 
 FILE
 index.html · audio/ (13 tracce) · · sw.js · manifest.webmanifest · vercel.json · robots.txt · icone · og-image.jpg · font Bungee (licenza OFL).
+
+NOVITÀ v1.3
+- Il Capone protagonista ora è il pupazzo ufficiale (testa a microfono con cappello e baffi, vista da davanti), al posto del vecchio personaggio.
+- Icone, favicon e immagine di anteprima rifatte.
+- Il pulsante verso la sala giochi punta a salagiochi.ilcaponequiz.win.
+
