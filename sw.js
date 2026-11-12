@@ -1,6 +1,6 @@
 // Service worker di Munnizza: permette l'installazione come app.
 // La pagina si prende sempre da internet (così gli aggiornamenti arrivano subito); se manca la rete usa la copia salvata.
-const VERSION = "v1.2";
+const VERSION = "v1.2.1";
 const CACHE = "munnizza-" + VERSION;
 const PRECACHE = ["/", "/icons/icon-192.png", "/icons/icon-512.png", "/audio/immondizia.mp3", "/audio/errore1.mp3", "/audio/errore2.mp3", "/audio/errore3.mp3", "/audio/livello-alluminio.mp3", "/audio/livello-secco.mp3", "/audio/commento1.mp3", "/audio/commento2.mp3", "/audio/commento3.mp3", "/audio/commento4.mp3", "/audio/commento5.mp3", "/audio/commento6.mp3", "/audio/commento7.mp3"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting())); });
